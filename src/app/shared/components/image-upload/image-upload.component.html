@@ -1,0 +1,22 @@
+<div class="fileinput text-center">
+  <input 
+    #fileInput 
+    type="file" 
+    (change)="onFileSelected($event)" 
+    style="display: none;" 
+  />
+  <div class="thumbnail img-circle">
+    <app-image [imageSrc]="imageUrl" [config]="{
+      placeholder:'assets/img/placeholder.jpg',
+      alt:'Uploaded Image Preview' 
+    }"></app-image>
+  </div>
+  <div>
+    <button 
+      class="btn-round btn btn-primary" 
+      (click)="triggerFileUpload(fileInput)"
+    > 
+      Select image 
+    </button>
+  </div>
+</div>

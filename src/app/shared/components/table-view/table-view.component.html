@@ -1,0 +1,72 @@
+<div class=" card">
+  <div class=" card-header">
+    <h4 class=" card-title">Simple Table</h4>
+    <a routerLink="/admin/dash/tasks"><span class=" card-category">to Tasks</span></a>
+  </div>
+  <div class=" card-body">
+    <div class=" table-responsive">
+      <table class=" table">
+        <thead class=" text-primary">
+          <tr>
+            <th class=" text-center">#</th>
+            <th>Name</th>
+            <th>Job Position</th>
+            <th>Milestone</th>
+            <th class=" text-right">Salary</th>
+            <th class=" text-right">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class=" text-center"><div class=" photo"><img alt="photo" src="assets/img/james.jpg"></div></td>
+            <td>Tania Mike</td>
+            <td>Develop</td>
+            <td class=" text-center">
+              <div class="progress-container progress-sm">
+                <ngb-progressbar
+                  [type]="'success'"
+                  [max]="100"
+                  [value]="77"
+                  [animated]="true"
+                  [showValue]="true"
+                >
+                </ngb-progressbar>
+              </div>
+            </td>
+            <td class=" text-right">€ 99,225</td>
+            <td class=" text-right">
+              <button class=" btn btn-success btn-link btn-icon btn-sm btn-simple" tooltip="Refresh" 
+              type="button" aria-describedby="tooltip-60"><i class=" tim-icons icon-refresh-01"></i></button>
+              <button class=" btn btn-danger btn-link btn-icon btn-sm btn-simple" tooltip="Delete" 
+              type="button" aria-describedby="tooltip-61"><i class=" tim-icons icon-simple-remove"></i></button>
+            </td>
+          </tr>
+          <!--tr>
+            <td class=" text-center"><div class=" photo"><img alt="photo" src="assets/img/robi.jpg"></div></td>
+            <td>John Doe</td>
+            <td>CEO</td>
+            <td class=" text-center">
+              <div class=" progress-container progress-sm">
+                <div class=" progress">
+                  <span class=" progress-value"> 77% </span>
+                  <progressbar _nghost-tih-c10="" max="100" class="progress">
+                    <bar _ngcontent-tih-c10="" aria-valuemin="0" role="progressbar" class="progress-bar ng-star-inserted" 
+                    aria-valuenow="77" aria-valuetext="77%" style="height: 100%; width: 77%;">
+                  </bar>
+                  </progressbar>
+                </div>
+              </div>
+            </td>
+            <td class=" text-right">€ 89,241</td>
+            <td class=" text-right">
+                <button class=" btn btn-success btn-link btn-sm btn-icon btn-simple" tooltip="Refresh" 
+                type="button" aria-describedby="tooltip-62"><i class=" tim-icons icon-refresh-01"></i></button>
+                <button class=" btn btn-danger btn-link btn-sm btn-icon btn-simple" tooltip="Delete" 
+                type="button" aria-describedby="tooltip-63"><i class=" tim-icons icon-simple-remove"></i></button>
+            </td>
+          </tr-->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

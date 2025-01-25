@@ -1,0 +1,34 @@
+.fileinput {
+  display: inline-block;
+  margin-bottom: 9px;
+}
+.fileinput input {
+  display: none;
+}
+.fileinput .thumbnail {
+  display: inline-block;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  max-width: 250px;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, .1);
+}
+.thumbnail {
+  border: 0;
+  border-radius: 3px;
+  padding: 0;
+}
+.fileinput .thumbnail>img {
+  max-height: 100%;
+}
+.card-wizard .btn {
+  text-transform: uppercase;
+}
+.fileinput .btn {
+  vertical-align: middle;
+}
+.fileinput .thumbnail.img-circle {
+  border-radius: 50%;
+  max-width: 100px;
+}

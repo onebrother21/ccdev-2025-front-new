@@ -1,0 +1,92 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-12">
+      <div class="toolbar">
+        <button 
+          *ngFor="let tool of tools" 
+          (click)="selectTool(tool)" 
+          [class.selected]="selectedTool === tool">
+          <img [src]="tool.icon" [alt]="tool.name" />
+        </button>
+      </div>
+      <div class="map-container" #mapContainer>
+        <svg *ngIf="gridHeight && gridWidth && cellHeight && cellWidth"
+          xmlns="http://www.w3.org/2000/svg"
+          [attr.width]="gridWidth"
+          [attr.height]="gridHeight"
+          class="grid"
+        >
+          <!-- Horizontal Lines -->
+          <g *ngFor="let hStreet of horizontalStreets; let i = index">
+            <line
+              [attr.x1]="0"
+              [attr.y1]="(i + 1) * cellHeight"
+              [attr.x2]="gridWidth"
+              [attr.y2]="(i + 1) * cellHeight"
+              class="grid-line"
+            ></line>
+            <text
+              [attr.x]="0"
+              [attr.y]="(i + 1) * cellHeight - 5"
+              class="street-label"
+            >
+              {{ hStreet }}
+            </text>
+          </g>
+      
+          <!-- Vertical Lines -->
+          <g *ngFor="let vStreet of verticalStreets; let j = index">
+            <line
+              [attr.x1]="(j + 1) * cellWidth"
+              [attr.y1]="0"
+              [attr.x2]="(j + 1) * cellWidth"
+              [attr.y2]="gridHeight"
+              class="grid-line"
+            ></line>
+            <text
+              [attr.x]="(j + 1) * cellWidth - 10"
+              [attr.y]="20"
+              class="street-label"
+            >
+              {{ vStreet }}
+            </text>
+          </g>
+      
+          <!-- Car Icon -->
+          <image
+            *ngIf="vehicle"
+            href="assets/img/sim-car-2.png"
+            [attr.x]="vehicle.x - 10"
+            [attr.y]="vehicle.y - 10"
+            width="20"
+            height="20"
+          />
+          <image
+            *ngIf="destination"
+            href="assets/img/sim-house-1.png"
+            [attr.x]="destination.x - 10"
+            [attr.y]="destination.y - 10"
+            width="20"
+            height="20"
+          />
+          <image
+            *ngIf="shop"
+            href="assets/img/sim-store-2.png"
+            [attr.x]="shop.x - 10"
+            [attr.y]="shop.y - 10"
+            width="20"
+            height="20"
+          />
+          <circle
+            *ngIf="target"
+            [attr.cx]="target.x"
+            [attr.cy]="target.y"
+            r="5"
+            fill="green"
+            class="grid-line"
+          ></circle>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1 @@
+export * from "./products-home.component";

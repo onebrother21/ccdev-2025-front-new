@@ -1,0 +1,36 @@
+
+<div *ngIf="task">
+  <div class=" row">
+    <div class=" col-sm-12"><app-bug-task-editor></app-bug-task-editor></div>
+    <!--div class=" col-sm-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h5 class=" card-category">Bug {{bugId}}</h5>
+          <h3 class=" card-title">Tasks</h3>
+        </div>
+        <div class=" card-body">
+          <div class="d-flex">
+            <div ngbNav #nav="ngbNav" [(activeId)]="activeTab" class="nav-pills flex-column" orientation="vertical">
+              <ng-container *ngFor="let subtask of task.subtasks;let i = index">
+                <ng-container [ngbNavItem]="i">
+                  <button class="btn btn-round mr-1" [ngClass]="activeTab == i?'btn-danger':'btn-secondary'" ngbNavLink>
+                    {{subtask.title|capitalize}}
+                  </button>
+                  <ng-template ngbNavContent>
+                    <span [innerHtml]="subtask.description"></span><br>
+                    <a class=" btn btn-primary btn-sm mr-1" [routerLink]="['/business/tasks',task.id,'subtasks',subtask.id]">Edit</a>
+                    <button class=" btn btn-primary btn-sm mr-1" (click)="deleteSubtask(subtask.id)">Delete</button>
+                  </ng-template>
+                </ng-container>
+              </ng-container>
+            </div>
+            <div [ngbNavOutlet]="nav" class="ml-4 ms-4"></div>
+          </div>
+        </div>
+        <div class=" card-footer">
+          <button class=" btn btn-fill btn-primary"  (click)="addSubtask()"> Add Subtask </button>
+        </div>
+      </div>
+    </div-->
+  </div>
+</div>

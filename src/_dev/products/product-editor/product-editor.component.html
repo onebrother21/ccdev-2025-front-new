@@ -1,0 +1,60 @@
+<form class="form-stacked" [formGroup]="productForm" (ngSubmit)="updateProduct()">
+  <div class=" card">
+    <div class=" card-header">
+      <h4 class=" card-title">Edit Product</h4>
+    </div>
+    <div class=" card-body">
+      <div class=" row">
+        <label class=" col-md-3 col-form-label"> Delivery Date </label>
+        <div class=" col-md-9">
+          <div class=" form-group">
+            <input type="text"
+              class="form-control"
+              bsDatepicker
+              formControlName="deliveryDate"
+              [bsConfig]="dateInputConfig"
+            >
+          </div>
+        </div>
+      </div>
+      <div class=" row">
+        <label class=" col-md-3 col-form-label"> Notes </label>
+        <div class=" col-md-9">
+          <div class=" form-group">
+            <input class=" form-control" type="text" formControlName="notes" />
+            <div *ngIf="productForm.get('notes')?.invalid && productForm.get('notes')?.touched">
+              Notes is required and must be at least 3 characters long.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" row">
+        <label class=" col-md-3 col-form-label"> Description </label>
+        <div class=" col-md-9">
+          <div class=" form-group">
+            <textarea class=" form-control" type="text" formControlName="desc" rows="3"></textarea>
+            <div *ngIf="productForm.get('desc')?.invalid && productForm.get('desc')?.touched">
+              Description is required and must be at least 10 characters long.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--div class=" row">
+        <label class=" col-md-3 col-form-label"> Entity Type </label>
+        <div class=" col-md-9">
+          <ng-container *ngFor="let o of options;let i = index">
+            <div class=" form-check form-check-inline">
+              <label class=" form-check-label">
+                <input class=" form-check-input" type="checkbox" [checked]="selectedCheck === i" (change)="changeSelection(i)"> 
+                <span class=" form-check-sign"></span> {{ o.name }}
+              </label>
+            </div>
+          </ng-container>
+        </div>
+      </div-->
+    </div>
+    <div class=" card-footer"> 
+      <button class=" btn btn-fill btn-primary"  [disabled]="productForm.invalid" type="submit"> Save Product </button>
+    </div>
+  </div>
+</form>

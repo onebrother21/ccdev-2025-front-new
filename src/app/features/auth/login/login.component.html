@@ -1,0 +1,42 @@
+<div class="full-page login-page ">
+  <div class=" content">
+    <div class=" container">
+      <div class=" col-lg-4 col-md-6 ml-auto mr-auto">
+        <form class=" form" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+          <div class=" card card-login card-white">
+            <div class=" card-header">
+              <h2 class=" card-title">Welcome Back!</h2>
+            </div>
+            <div class=" card-body">
+              <div class="input-group">
+                <div class=" input-group-prepend">
+                  <div class=" input-group-text">
+                    <i class=" tim-icons icon-email-85"></i>
+                  </div>
+                </div>
+                <input class=" form-control" formControlName="emailOrUsername" placeholder="Email or Username" type="text">
+              </div>
+              <div class="input-group">
+                <div class=" input-group-prepend">
+                  <div class=" input-group-text">
+                    <i class=" tim-icons icon-lock-circle"></i>
+                  </div>
+                </div>
+                <input class=" form-control" formControlName="pin" placeholder="Password" type="password">
+              </div>
+            </div>
+            <div class=" card-footer">
+              <button class=" btn btn-primary btn-lg btn-block mb-3" type="submit"> Get Started </button>
+              <div class=" pull-left">
+                <h6><a class=" link footer-link" routerLink="/abc123/register"> Create New Account </a></h6>
+              </div>
+              <div class=" pull-right">
+                <h6><a class=" link footer-link" href="javascript:void(0)"> Need Help? </a></h6>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

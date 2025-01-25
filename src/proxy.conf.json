@@ -1,0 +1,25 @@
+{
+  "/geoapi/*": {
+    "target": "https://forward-reverse-geocoding.p.rapidapi.com/v1/forward",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {"^/geoapi":""}
+  },
+  "/my-firebase": {
+    "target": "https://firebasestorage.googleapis.com/v0",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/my-firebase": ""
+    }
+  },
+  "/ccdevapi": {
+    "target": "https://localhost:3001/v1",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/my-firebase": ""
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<div class=" card">
+  <div class=" card-header">
+    <div class=" tools float-right btn-group">
+      <div class="inline-btns">
+        <button class=" btn btn-link btn-icon inline-btn" type="button" (click)="startNewCourier()">
+          <i class=" tim-icons icon-simple-add"> </i>
+        </button>
+      </div>
+      <div ngbDropdown>
+        <button
+          class=" btn btn-link btn-icon"
+          data-toggle="dropdown"
+          ngbDropdownToggle
+          type="button"
+        >
+          <i class=" tim-icons fas fa-filter"> </i>
+        </button>
+        <div
+          aria-labelledby="dropdownMenuLink"
+          class=" dropdown-menu-right"
+          ngbDropdownMenu
+        >
+          <ng-container *ngFor="let o of dropdownMenu;let i = index">
+            <a href="javascript:void(0)" (click)="doDropdownAction(i)" ngbDropdownItem> {{o}} </a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <h5 class=" card-title">Couriers</h5>
+  </div>
+  <div class=" card-body">
+    <div class=" table-responsive">
+      <table class=" table">
+        <thead class=" text-primary">
+          <tr>
+            <th>Username</th>
+            <th>Fullname</th>
+            <th>License</th>
+            <th>Vehicle</th>
+            <th class=" text-center">Date</th>
+            <th class=" text-right">Actions</th>
+          </tr>
+        </thead>
+        <tbody class=" small">
+          <ng-container *ngFor="let courier of couriers">
+            <tr>
+              <td class="text-center">
+                <a href="javascript:void(0)" (click)="editCourier(courier.id)">
+                  <div class=" photo"><img alt="photo" [src]="courier.pic"></div> {{courier.username}}
+                </a>
+              </td>
+              <td>{{courier.name.first + " " + courier.name.last}}</td>
+              <td>{{courier.license.state + " " + courier.license.idNo + " " + courier.license.yr}}</td>
+              <td><b class=" text-white">{{getVehicleString(courier)}}</b></td>
+              <td class=" text-center">{{courier.createdOn|date:'MM/dd'}}</td>
+              <td class=" text-right">
+                <button class=" btn btn-success btn-link btn-icon btn-sm btn-simple" 
+                (click)="editCourier(courier.id)"
+                tooltip="Edit" 
+                type="button" 
+                aria-describedby="tooltip-60"><i class=" tim-icons icon-pencil"></i></button>
+                <button class=" btn btn-danger btn-link btn-icon btn-sm btn-simple" 
+                tooltip="Delete" 
+                type="button" 
+                aria-describedby="tooltip-61"><i class=" tim-icons icon-simple-remove"></i></button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

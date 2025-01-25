@@ -1,0 +1,1 @@
+export * from "./new-courier-about.component";

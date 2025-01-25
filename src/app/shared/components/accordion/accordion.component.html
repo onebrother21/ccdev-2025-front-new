@@ -1,0 +1,66 @@
+<!--div class=" card">
+  <div class=" card-header">
+    <h5 class=" card-category">Collpase example</h5>
+    <h3 class=" card-title">Collapsible Accordion</h3>
+  </div>
+  <div aria-multiselectable="true" class=" card-collapse" id="accordion" role="tablist">
+    <div class=" card card-plain">
+      <div class=" card-header" id="headingOne">
+        <a aria-controls="collapseOne" data-parent="#accordion" data-toggle="collapse" href="#pablo" id="collapseOne" aria-expanded="false">
+          Collapsible Group Item #1 <i class=" tim-icons icon-minimal-down"></i>
+        </a>
+      </div>
+      <div aria-labelledby="headingOne" class="collapse" id="collapseOne" role="tabpanel" 
+        aria-expanded="false" aria-hidden="true" style="display: none;">
+        <div class=" card-body"> Accordion body one </div>
+      </div>
+    </div>
+    <div class=" card card-plain">
+      <div class=" card-header" id="headingTwo">
+        <a aria-controls="collapseTwo" class=" collapsed" data-parent="#accordion" data-toggle="collapse" href="#pablo" id="collapseTwo" 
+        aria-expanded="false">
+          Collapsible Group Item #2 <i class=" tim-icons icon-minimal-down"></i>
+        </a>
+      </div>
+      <div aria-labelledby="headingTwo" id="collapseTwo" role="tabpanel" class="collapse" 
+        aria-expanded="false" aria-hidden="true" style="display: none;">
+        <div class=" card-body"> Accordion body two </div>
+      </div>
+    </div>
+    <div class=" card card-plain">
+      <div class=" card-header" id="headingThree">
+        <a aria-controls="collapseThree" class=" collapsed" data-parent="#accordion" data-toggle="collapse" href="#pablo" id="collapseThree" 
+        aria-expanded="false">
+         Collapsible Group Item #3 <i class=" tim-icons icon-minimal-down"></i>
+        </a>
+      </div>
+      <div aria-labelledby="headingThree" id="collapseThree" role="tabpanel" class="collapse" aria-expanded="false" 
+      aria-hidden="true" style="display: none;">
+        <div class=" card-body"> Accordion body three </div>
+      </div>
+    </div>
+  </div>
+</div-->
+<div class=" card">
+  <div class=" card-header">
+    <h5 class=" card-category">Collpase example</h5>
+    <h4 class=" card-title">Collapsible Accordion</h4>
+  </div>
+  <div ngbAccordion [closeOthers]="true" [animation]="true" class=" card-collapse">
+    @for (label of labels; track label) {
+      <div ngbAccordionItem class=" card card-plain">
+        <!--h2 ngbAccordionHeader>
+          <button ngbAccordionButton>{{ label }}</button>
+        </h2-->
+        <div class=" card-header" ngbAccordionHeader>
+          <a ngbAccordionToggle data-toggle="collapse"> {{label}} <i class=" tim-icons icon-minimal-down"></i></a>
+        </div>
+        <div ngbAccordionCollapse>
+          <div ngbAccordionBody class=" card-body">
+            <ng-template>{{sample}}</ng-template>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

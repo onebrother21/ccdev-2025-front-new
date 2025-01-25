@@ -1,0 +1,36 @@
+
+<div class=" content" *ngIf="plan">
+  <div class=" row">
+    <div class=" col-md-12"><app-business-plan-editor></app-business-plan-editor></div>
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h5 class=" card-category">Plan {{plan.id}}</h5>
+          <h3 class=" card-title">Sections</h3>
+        </div>
+        <div class=" card-body">
+          <div class="d-flex">
+            <div ngbNav #nav="ngbNav" [(activeId)]="activeTab" class="nav-pills flex-column" orientation="vertical">
+              <ng-container *ngFor="let section of plan.sections;let i = index">
+                <ng-container [ngbNavItem]="i">
+                  <button class="btn btn-round mr-1" [ngClass]="activeTab == i?'btn-danger':'btn-secondary'" ngbNavLink>
+                    {{section.title|capitalize}}
+                  </button>
+                  <ng-template ngbNavContent>
+                    <span [innerHtml]="section.htmlContent"></span><br>
+                    <a class=" btn btn-primary btn-sm mr-1" [routerLink]="['/admin/business/plans',plan.id,'sections',section.id]">Edit</a>
+                    <button class=" btn btn-primary btn-sm mr-1" (click)="deleteSection(section.id)">Delete</button>
+                  </ng-template>
+                </ng-container>
+              </ng-container>
+            </div>
+            <div [ngbNavOutlet]="nav" class="ml-4 ms-4"></div>
+          </div>
+        </div>
+        <div class=" card-footer">
+          <button class=" btn btn-fill btn-primary"  (click)="addSection()"> Add Section </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

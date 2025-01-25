@@ -1,0 +1,31 @@
+<div class=" row">
+  <ng-container *ngFor="let o of menu;let i = index">
+    <div class=" col-lg-3 col-md-6 col-6">
+      <a [routerLink]="o.url">
+        <div class=" card card-stats">
+          <div class=" card-body">
+            <div class=" row">
+              <div class=" col-5">
+                <div class=" info-icon text-center" [ngClass]="o.iconColor">
+                  <i class=" tim-icons" [ngClass]="o.icon"></i>
+                </div>
+              </div>
+              <div class=" col-7">
+                <div class=" numbers">
+                  <p class=" card-category">{{o.category}}</p>
+                  <!--h3 class=" card-title">{{o.title}}</h3-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--div class=" card-footer">
+            <hr>
+            <div class=" stats">
+              <i class=" tim-icons" [ngClass]="o.infoIcon"></i> {{o.info}}
+            </div>
+          </div-->
+        </div>
+      </a>
+    </div>
+  </ng-container>
+</div>

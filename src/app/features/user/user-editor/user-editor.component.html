@@ -1,0 +1,182 @@
+<ng-container *ngIf="user">
+  <form class="form-stacked" id="userForm" [formGroup]="userForm" (ngSubmit)="submitUserUpdates()">
+    <div class=" card" style="padding:10px">
+      <div class=" card-header"><h3 class=" card-category">Edit Profile</h3></div>
+      <div ngbAccordion [closeOthers]="true" [animation]="true" class=" card-collapse">
+        <div ngbAccordionItem class=" card card-plain">
+          <div ngbAccordionHeader class=" card-header">
+            <a ngbAccordionToggle data-toggle="collapse"> User Details <i class=" tim-icons icon-minimal-down"></i></a>
+          </div>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody class=" card-body">
+              <ng-template>
+                <div class=" row">
+                  <div class=" col-md-6 pr-md-1">
+                    <div class=" form-group">
+                      <label> First Name </label>
+                      <input
+                        class=" form-control"
+                        placeholder="Company"
+                        formControlName="firstname"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div class=" col-md-6 pl-md-1">
+                    <div class=" form-group">
+                      <label> Last Name </label>
+                      <input
+                        class=" form-control"
+                        placeholder="Last Name"
+                        formControlName="lastname"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class=" row">
+                  <div class=" col-md-6 pr-md-1">
+                    <div class=" form-group">
+                      <label> Username </label>
+                      <input
+                        class=" form-control"
+                        placeholder="Username"
+                        formControlName="username"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div class=" col-md-6 pl-md-1">
+                    <div class=" form-group">
+                      <label for="exampleInputEmail1"> Email address </label>
+                      <input
+                        class=" form-control"
+                        placeholder="anyuser@email.com"
+                        formControlName="email"
+                        type="email"
+                      />
+                    </div>
+                  </div>
+                </div>  
+                <div class=" row">
+                  <div class=" col-md-8">
+                    <div class=" form-group">
+                      <label> About Me </label>
+                      <textarea class=" form-control"
+                        cols="80"
+                        rows="4"
+                        placeholder="Here can be your description"
+                        formControlName="bio"
+                      >
+                      </textarea>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+        <div ngbAccordionItem class=" card card-plain">
+          <div ngbAccordionHeader class=" card-header">
+            <a ngbAccordionToggle data-toggle="collapse"> Address Details <i class=" tim-icons icon-minimal-down"></i></a>
+          </div>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody class=" card-body">
+              <ng-template>
+                <div class=" row">
+                  <div class=" col-md-12">
+                    <div class=" form-group">
+                      <label> Address </label>
+                      <input
+                        class=" form-control"
+                        placeholder="Home Address"
+                        type="text"
+                        value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class=" row">
+                  <div class=" col-md-6 pr-md-1">
+                    <div class=" form-group">
+                      <label> City </label>
+                      <input
+                        class=" form-control"
+                        placeholder="City"
+                        type="text"
+                        value="Mike"
+                      />
+                    </div>
+                  </div>
+                  <div class=" col-md-6 pl-md-1">
+                    <div class=" form-group">
+                      <label> State </label>
+                      <select class=" form-control"
+                        placeholder="State"
+                        type="text"
+                        formControlName="state"
+                      >
+                      <option [value]="null">Select state</option>
+                      <ng-container *ngFor="let o of states;let i = index">
+                        <option style="color:darkgray;" [value]="o">{{o}}</option>
+                      </ng-container>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class=" row">
+                  <div class=" col-md-6 pr-md-1">
+                    <div class=" form-group">
+                      <label> Postal Code </label>
+                      <input
+                        class=" form-control"
+                        placeholder="Zip"
+                        type="number"
+                        value="20100"
+                      />
+                    </div>
+                  </div>
+                  <div class=" col-md-6 pl-md-1">
+                    <div class=" form-group">
+                      <label> Country </label>
+                      <input
+                        class=" form-control"
+                        placeholder="Country"
+                        type="text"
+                        value="USA"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+        <div ngbAccordionItem class=" card card-plain">
+          <div ngbAccordionHeader class=" card-header">
+            <a ngbAccordionToggle data-toggle="collapse"> Profile Details <i class=" tim-icons icon-minimal-down"></i></a>
+          </div>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody class=" card-body">
+              <ng-template>
+                <div class=" row text-center">
+                  <div class=" col-md-8">
+                    <div class=" form-group">
+                      <app-image-upload [imageUrl]="user.img" (setImage)="setImage($event)"></app-image-upload>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" card-footer"> 
+        <button class=" btn btn-fill btn-primary"  [disabled]="userForm.invalid" type="submit"> Save </button>
+        <div *ngIf="userForm.invalid">
+          <pre>{{findInvalidControls()|json}}</pre>
+        </div>
+      </div>
+    </div>
+  </form>
+</ng-container>

@@ -1,0 +1,74 @@
+
+<div class=" row">
+  <label class=" col-sm-2 col-form-label"> Checkboxes and radios </label>
+  <div class=" col-sm-10 checkbox-radios">
+    <div class=" form-check">
+      <label class=" form-check-label">
+        <input class=" form-check-input" type="checkbox">
+        <span class=" form-check-sign"></span> First Checkbox 
+      </label>
+    </div>
+    <div class=" form-check">
+      <label class=" form-check-label">
+        <input class=" form-check-input" type="checkbox">
+        <span class=" form-check-sign"></span> Second Checkbox 
+      </label>
+    </div>
+    <div class=" form-check form-check-radio">
+      <label class=" form-check-label">
+        <input checked="checked" class=" form-check-input" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+        <span class=" form-check-sign"></span> First Radio 
+      </label>
+    </div>
+    <div class=" form-check form-check-radio">
+      <label class=" form-check-label">
+        <input class=" form-check-input" id="exampleRadios2" name="exampleRadios" type="radio" value="option2" data-gtm-form-interact-field-id="6">
+        <span class=" form-check-sign"></span> Second Radio 
+      </label>
+    </div>
+  </div>
+</div>
+<div class=" row">
+  <label class=" col-sm-2 col-form-label"> Inline checkboxes </label>
+  <div class=" col-sm-10">
+    <div class=" form-check form-check-inline">
+      <label class=" form-check-label">
+        <input class=" form-check-input" type="checkbox">
+        <span class=" form-check-sign"></span> a 
+      </label>
+    </div>
+    <div class=" form-check form-check-inline">
+      <label class=" form-check-label">
+        <input class=" form-check-input" type="checkbox">
+        <span class=" form-check-sign"></span> b 
+      </label>
+    </div>
+    <div class=" form-check form-check-inline">
+      <label class=" form-check-label">
+        <input class=" form-check-input" type="checkbox">
+        <span class=" form-check-sign"></span> c 
+      </label>
+    </div>
+  </div>
+</div>
+
+<!-- multple checks -->
+<div formGroupName="checkboxes">
+  <ng-container *ngFor="let item of getChecks().value | keyvalue">
+    <div class=" form-check form-check-inline">
+      <label class=" form-check-label">
+        <input class=" form-check-input" type="checkbox" [formControlName]="castCheckKeyAsString(item.key)" [value]="item.value">
+        <span class=" form-check-sign"></span> {{ item.key }}
+      </label>
+    </div>
+  </ng-container>
+</div>
+<!-- multple checks TS
+ checkboxes: this.fb.group({}),
+    });
+    const checkboxes = this.getChecks();
+    this.options.forEach(k => checkboxes.addControl(k.name,new FormControl(false)));
+  }
+  getChecks(){return <FormGroup>this.createPlanForm.get('checkboxes') as any}
+  castCheckKeyAsString(k:any){return k as string;}
+-->

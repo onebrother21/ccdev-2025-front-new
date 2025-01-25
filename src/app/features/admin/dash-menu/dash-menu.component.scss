@@ -1,0 +1,60 @@
+.card-stats .info-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: top right / 210% 210% #e14eca;
+  background-image: linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+}
+.card-stats .numbers {
+  text-align: right;
+}
+.card-stats .numbers p {
+  margin-top:0;
+}
+.card-stats .numbers .card-category {
+  margin-bottom: 0;
+  color: #9a9a9a;
+}
+.card-stats .numbers .card-title {
+  margin-top: 0;
+}
+.card-stats .card-footer {
+  padding: 0;
+}
+.card-stats hr {
+  border-color: #2b3553;
+}
+.card-contributions hr, .card-stats hr {
+  margin: 5px 15px;
+}
+
+.card-stats .stats {
+  color: rgba(255, 255, 255, .6);
+  margin: 10px 15px;
+  font-size: .9em;
+}
+.card .card-footer .stats i {
+  margin-right: 5px;
+  position: relative;
+}
+.card-stats .info-icon i {
+  color: #fff;
+  font-size: 1.7em;
+  padding: 14px 13px;
+}
+.card-stats .info-icon.icon-warning {
+  background: top right / 210% 210% #ff8d72;
+  background-image: linear-gradient(to bottom left, #ff8d72, #ff6491, #ff8d72);
+}
+.card-stats .info-icon.icon-primary {
+  background: top right / 210% 210% #e14eca;
+  background-image: linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+}
+.card-stats .info-icon.icon-success {
+  background: top right / 210% 210% #00f2c3;
+  background-image: linear-gradient(to bottom left, #00f2c3, #0098f0, #00f2c3);
+}
+.card-stats .info-icon.icon-danger {
+  background: top right / 210% 210% #fd5d93;
+  background-image: linear-gradient(to bottom left, #fd5d93, #ec250d, #fd5d93);
+}

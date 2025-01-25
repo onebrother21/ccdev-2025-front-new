@@ -1,0 +1,13 @@
+<div class="progress-with-circle">
+  <div class="progress-bar-under progress" max="100">
+    <div 
+      role="progressbar" 
+      class="progress-bar-over" 
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [attr.aria-valuenow]="progressVal"
+      [attr.aria-valuetext]="progressVal+'%'"
+      [style.width]="progressVal+'%'">
+    </div>
+  </div>
+</div>
