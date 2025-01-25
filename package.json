@@ -1,6 +1,6 @@
 {
   "name": "ccdev-2025-front-new",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 10000 --host 0.0.0.0 --configuration production",
