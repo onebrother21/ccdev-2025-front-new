@@ -1,1 +1,0 @@
-export * from "./new-admin-about.component";

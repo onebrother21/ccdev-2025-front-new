@@ -1,9 +1,9 @@
-import { CommonState,Nullable,initializeCommonState } from "@types";
-import { AuthTokenPublic,AuthUserPreview } from "./auth.models";
+import { IUserPreview,Nullable } from "@types";
+import { CommonState,initializeCommonState } from "../common.state";
 
 export interface AuthFeatureState extends CommonState {
-  user:Nullable<AuthUserPreview>;
-  token:Nullable<AuthTokenPublic>;
+  user:Nullable<IUserPreview>;
+  token:Nullable<string>;
   urlAfterLogin?:string;
   exists?:boolean;
 }

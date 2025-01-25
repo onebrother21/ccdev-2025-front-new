@@ -3,7 +3,7 @@ import { routerNavigatedAction,routerNavigationAction, routerRequestAction } fro
 import { NavigationActions as NAV } from "./navigation.actions";
 import { NavigationFeatureState,initializeNavigation } from "./navigation.state";
 import { AppError,AppEntity } from "@types";
-import { CommonUtils } from "@utils";
+import { CommonUtils } from "app/utils";
 
 const initialState = initializeNavigation();
 const reducer = createReducer(

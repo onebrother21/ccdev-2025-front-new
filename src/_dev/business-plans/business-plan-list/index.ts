@@ -1,1 +1,0 @@
-export * from "./business-plan-list.component";

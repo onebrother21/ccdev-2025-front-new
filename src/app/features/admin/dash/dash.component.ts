@@ -1,6 +1,6 @@
 import { Component,OnInit } from "@angular/core";
 import { SharedModule } from "@shared";
-import { AppWindowService } from "core";
+import { AppWindowService } from "@core";
 import { DashMenuComponent } from "../dash-menu";
 
 @Component({

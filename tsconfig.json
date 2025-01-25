@@ -26,14 +26,13 @@
       "dom"
     ],
     "paths": {
-      "@api": ["api"],
       "@shared": ["app/shared"],
       "@state": ["app/state"],
       "@features/*": ["app/features/*"],
       "@env":["environments/environment"],
-      "@core": ["core"],
-      "@types": ["types"],
-      "@utils": ["utils"],
+      "@core": ["app/core"],
+      "@types": ["app/types"],
+      "@utils": ["app/utils"],
     },
   },
   "angularCompilerOptions": {

@@ -1,1 +1,0 @@
-export * from "./courier-list.component";

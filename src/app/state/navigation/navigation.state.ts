@@ -1,7 +1,7 @@
 import {
   AppRoute,
   AppNavItem
-} from "@types";
+} from "app/types";
 import {
   CommonStateWithHistory,
   initializeCommonStateWithHistory,

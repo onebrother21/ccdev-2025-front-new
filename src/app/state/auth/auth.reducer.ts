@@ -1,7 +1,8 @@
 import { Action, createReducer, on } from "@ngrx/store";
 import { AuthenticationActions as AUTH } from "./auth.actions";
 import { AuthFeatureState,initializeAuth } from "./auth.state";
-import { AppError, CommonUtils } from "@types";
+import { AppError } from "@types";
+import { CommonUtils } from "@utils";
 
 const initialState = initializeAuth();
 const reducer = createReducer(
@@ -36,14 +37,12 @@ const reducer = createReducer(
     AUTH.loginUserSuccess,
     AUTH.updateUserSuccess,(s,{payload:{user,token}}) => {
     const userPreview = user?{
-      _id:user._id,
+      id:user.id,
       email:user.email,
       name:user.name,
-      username:user.username||"",
       img:user.img||"",
       location:user.location||"",
-      meta:user.meta||{},
-      token,
+      //token,
     }:null;
     return {
       ...s,

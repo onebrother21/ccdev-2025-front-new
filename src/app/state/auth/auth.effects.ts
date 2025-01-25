@@ -80,7 +80,7 @@ export class AuthenticationEffects {
     ofType(this.app["@"].setUserPin),
     tap(o => this.currentAction = o.type),
     withLatestFrom(this.app.authId$),
-    map(([{payload:{pin}},username]) => ({username,pin})),
+    map(([{payload:{pin}},emailOrUsername]) => ({emailOrUsername,pin})),
     mergeMap(o => this.auth.setUserPin(o).pipe(
       mergeMap(({token,data:user}) => [
         this.app["@"].setUserPinSuccess({user,token}),

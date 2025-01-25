@@ -3,7 +3,7 @@ import { Component,Input,Output,EventEmitter } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { StorageModule, Storage, uploadBytes,ref } from '@angular/fire/storage';
 import { Observable,tap } from 'rxjs';
-import { R2StorageService } from 'core';
+import { R2StorageService } from 'app/core';
 import { ImageComponent } from '../image/image.component';
 
 @Component({

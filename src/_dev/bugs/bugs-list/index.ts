@@ -1,1 +1,0 @@
-export * from "./bugs-list.component";

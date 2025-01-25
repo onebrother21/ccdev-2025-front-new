@@ -1,7 +1,8 @@
 import { Action, createReducer, on } from "@ngrx/store";
 import { AppActions as APP } from "./app.actions";
 import { AppFeatureState,initializeApp } from "./app.state";
-import { AppError,CommonUtils,CommonUtils as Utils } from "types";
+import { AppError } from "@types";
+import { CommonUtils } from "@utils";
 
 const initialState = initializeApp();
 const reducer = createReducer(

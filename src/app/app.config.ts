@@ -11,7 +11,7 @@ import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 
-import { AppHttpInterceptor, AppLocalStorageService } from 'core';
+import { AppHttpInterceptor, AppLocalStorageService } from 'app/core';
 //import { InMemApiProvider } from '@api';
 import { AppConfigurationFactory, AppConfigurationService } from './app.config.service';
 import { appRoutes } from './app.routes';
@@ -22,7 +22,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { storeFreeze } from 'ngrx-store-freeze';
 
-import { AppRouterStateSerializer,AppRouterUrlSerializer } from 'core';
+import { AppRouterStateSerializer,AppRouterUrlSerializer } from 'app/core';
 import { environment as env } from '@env';
 import { REDUCERS,EFFECTS,AppState,initialAppState as initialState } from '@state';
 
@@ -37,9 +37,9 @@ export const appConfig: ApplicationConfig = {
       deps: [AppConfigurationService],
       multi: true,
     },
-    provideFirebaseApp(() => initializeApp(env.firebase)),
-    provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage()),
+    //provideFirebaseApp(() => initializeApp(env.firebase)),
+    //provideFirestore(() => getFirestore()),
+    //provideStorage(() => getStorage()),
     {provide:UrlSerializer,useClass:AppRouterUrlSerializer},
     {provide:RouterStateSerializer,useClass:AppRouterStateSerializer},
     {provide:HTTP_INTERCEPTORS,multi:true,useClass:AppHttpInterceptor},

@@ -1,9 +1,9 @@
 import { Injectable,inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment as env } from '@env';
-import { AppLocalStorageService } from 'core';
-import { CommonUtils } from '@common';
-import { initialDb } from '@api';
+import { AppLocalStorageService } from 'app/core';
+import { CommonUtils } from 'app/utils';
+//import { initialDb } from '@api';
 import { lastValueFrom, of, tap } from 'rxjs';
 
 //import { Configuration } from './configuration';
@@ -16,6 +16,7 @@ interface Configuration {
 @Injectable()
 export class AppConfigurationService {
   private local = inject(AppLocalStorageService);
+  
   private readonly configUrlPath: string = 'Home/Configuration';
   private configData: Partial<Configuration> = {};
   private configuration:Configuration = {
@@ -27,7 +28,7 @@ export class AppConfigurationService {
   private loadInMemApiDb(){
     const db = this.local.load("appDb");
     const emptyDb = !db || CommonUtils.isEmpty(db);
-    if(emptyDb) this.local.save("appDb",initialDb);
+    //if(emptyDb) this.local.save("appDb",initialDb);
   }
   private loadConfigurationData() {
     return lastValueFrom(of(this.configuration).pipe(

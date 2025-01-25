@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, inject, OnInit } from "@angular/core";
 import { RouterLink } from "@angular/router";
-import { AppWindowService } from "core";
+import { AppWindowService } from "app/core";
 import {
   NgbDropdown,
   NgbDropdownToggle,

@@ -3,7 +3,7 @@ import { ROUTES } from "../sidebar/sidebar.component";
 import { CommonModule, isPlatformBrowser, Location } from "@angular/common";
 import { Router, RouterLink } from "@angular/router";
 import { NgbDropdownModule,NgbModal,NgbModalRef,ModalDismissReasons, NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
-import { AppWindowService } from "core";
+import { AppWindowService } from "app/core";
 import { ModalComponent } from "app/shared/components/modal";
 import { UserJson } from "@state";
 import { Subscription, tap } from "rxjs";
